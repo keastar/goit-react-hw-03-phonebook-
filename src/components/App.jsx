@@ -80,8 +80,6 @@ class App extends Component {
     console.log(this.state);
   };
 
-
-
   render() {
     const {filter} = this.state;
     const visibleContacts = this.getVisibleContacts();
