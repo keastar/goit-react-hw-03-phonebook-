@@ -21,7 +21,6 @@ class App extends Component {
 
   formSubmitHandler = ({ name, number }) => {
     const { contacts } = this.state;
-
     const found = contacts.find((contact) => contact.name.toLowerCase() === name.toLowerCase());
    
     if (found) {
@@ -70,14 +69,9 @@ class App extends Component {
   componentDidUpdate(prevProps, prevState) {
 
     if (this.state.contacts !== prevState.contacts) {
-      console.log('Обновилось поле контактов');
-
 // если добавляется контакт, то он в виде строки записывается в локалсторадж
     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
 }
-    console.log('App componentDidUpdate');
-    console.log(prevState);
-    console.log(this.state);
   };
 
 
